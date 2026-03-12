@@ -28,4 +28,10 @@ def calcular_media(lista):
 def calcular_mediana(lista):
     lista.sort(key=lambda g: g.valor)
     n = len(lista)
-  #terminar code
+    if n % 2 == 1:  # quantidade ímpar
+        meio = n // 2
+        return lista[meio].valor
+    else:  # quantidade par
+        meio1 = n // 2 - 1
+        meio2 = n // 2
+        return (lista[meio1].valor + lista[meio2].valor) / 2
