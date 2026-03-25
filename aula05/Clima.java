@@ -19,6 +19,7 @@ public class Clima{
     }
 
 
+    //saber o mes que mais choveu e o que mais fez calor.
     //reescrevemos o metodo equals para definir os atributos identificadores
     @Override
     public boolean equals(Object obj) {
