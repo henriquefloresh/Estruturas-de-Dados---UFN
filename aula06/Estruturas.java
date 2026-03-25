@@ -59,7 +59,7 @@ public class Estruturas {
         String descricao;
         
         System.out.print("Digite a palavra ou expressao que deseja remover: ");
-        descricao = teclado.nextLine().toUpperCase();
+        descricao = teclado.nextLine().toUpperCase();//lê as palavras ou expressões e transforma para maiúculo
 
         for(int i = 0; i < lista.size(); i++){ //laço para fazer a remoção da palavra
             if(lista.get(i).descricao.contains(descricao)){
