@@ -1,19 +1,19 @@
 Diferença entre Vector, List, ArrayList e LinkedList
 
-  Em Java, List é uma interface, ou seja, ela define um conjunto de métodos e comportamentos que outras classes devem seguir. 
-Não é possível criar um objeto diretamente de List, mas podemos usá-la como tipo de referência. Isso é útil porque permite trocar facilmente a implementação da lista sem alterar o restante do código. 
-Por exemplo, podemos usar tanto ArrayList quanto LinkedList usando o tipo List.
+Em Java, List é uma interface, ou seja, ela define um conjunto de métodos e comportamentos que outras classes devem seguir. 
+   Não é possível criar um objeto diretamente de List, mas podemos usá-la como tipo de referência. Isso é útil porque permite trocar facilmente a implementação da lista sem alterar o restante do código. 
+   Por exemplo, podemos usar tanto ArrayList quanto LinkedList usando o tipo List.
 
-  O ArrayList é uma das implementações mais usadas da interface List. Ele é baseado em um array dinâmico, o que significa que seu tamanho pode crescer conforme necessário. 
-Ele oferece acesso rápido aos elementos por índice (como get(i)), mas pode ser mais lento quando há muitas inserções ou remoções no meio da lista, pois precisa reorganizar os elementos. 
-Não é sincronizado, ou seja, não é seguro para uso direto com múltiplas threads.
+O ArrayList é uma das implementações mais usadas da interface List. Ele é baseado em um array dinâmico, o que significa que seu tamanho pode crescer conforme necessário. 
+  Ele oferece acesso rápido aos elementos por índice (como get(i)), mas pode ser mais lento quando há muitas inserções ou remoções no meio da lista, pois precisa reorganizar os elementos. 
+  Não é sincronizado, ou seja, não é seguro para uso direto com múltiplas threads.
 
-  O LinkedList também implementa List, mas utiliza uma lista encadeada como estrutura interna. Isso faz com que inserções e remoções sejam mais rápidas, especialmente no início ou no meio da lista. 
-Por outro lado, o acesso a elementos por índice é mais lento, pois é necessário percorrer a lista desde o início até a posição desejada. Assim como o ArrayList, ele não é sincronizado.
+O LinkedList também implementa List, mas utiliza uma lista encadeada como estrutura interna. Isso faz com que inserções e remoções sejam mais rápidas, especialmente no início ou no meio da lista. 
+  Por outro lado, o acesso a elementos por índice é mais lento, pois é necessário percorrer a lista desde o início até a posição desejada. Assim como o ArrayList, ele não é sincronizado.
 
-  O Vector é outra implementação de List, também baseada em array. A principal diferença é que ele é sincronizado (thread-safe), ou seja,
-pode ser usado com segurança em programas com múltiplas threads sem necessidade de controle externo. No entanto, essa sincronização traz perda de desempenho, tornando-o mais lento. 
-Por isso, o Vector é considerado uma classe legada e raramente é utilizado em aplicações modernas.
+O Vector é outra implementação de List, também baseada em array. A principal diferença é que ele é sincronizado (thread-safe), ou seja,
+  pode ser usado com segurança em programas com múltiplas threads sem necessidade de controle externo. No entanto, essa sincronização traz perda de desempenho, tornando-o mais lento. 
+  Por isso, o Vector é considerado uma classe legada e raramente é utilizado em aplicações modernas.
 
-  De forma geral, na prática, utiliza-se List como tipo de referência e ArrayList como implementação padrão. 
-O LinkedList é escolhido em casos específicos onde há muitas inserções e remoções, e o Vector é evitado, salvo quando há necessidade explícita de sincronização automática.
+De forma geral, na prática, utiliza-se List como tipo de referência e ArrayList como implementação padrão. 
+  O LinkedList é escolhido em casos específicos onde há muitas inserções e remoções, e o Vector é evitado, salvo quando há necessidade explícita de sincronização automática.
