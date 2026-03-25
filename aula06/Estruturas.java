@@ -54,25 +54,24 @@ public class Estruturas {
         }
     }
 
-    public static void removerProcessos(ArrayList<Processo> lista){
+     public static void removerProcessos(ArrayList<Processo> lista){
         Scanner teclado = new Scanner(System.in);
         String descricao;
         
         System.out.print("Digite a palavra ou expressao que deseja remover: ");
-        descricao = teclado.nextLine().toUpperCase();//lê as palavras ou expressões e transforma para maiúculo
+        descricao = teclado.nextLine().toUpperCase(); //lê as palavras ou expressões e transforma para maiúculo
 
-        for(int i = 0; i < lista.size(); i++){ //percorre via indice
-            if(lista.get(i).descricao.contains(descricao)){
-                lista.remove(i);
-                i--; // importante para não pular elementos
-            }
-        }
-
+        //percorrer por um iterador
+        Iterator<Processo> it = lista.iterator();
+        while(it.hasNext()){
+            Processo p = it.next();// Pega o próximo elemento
+                if(p.descricao.contains(descricao)){// Verifica se a descrição contém o texto digitado
+                   it.remove();// Remove com segurança usando o próprio Iterator
+                }
         System.out.println("Processos removidos com sucesso!");
-        System.out.println("\nLista atualizada:");
-        //percorre via objeto
-        for(Processo p : lista){
-            System.out.println(p);
+
+        // Exibe a lista atualizada
+        Estruturas.exibirProcesso(lista);
         }
     }
 
