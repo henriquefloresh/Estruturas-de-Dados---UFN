@@ -61,7 +61,7 @@ public class Estruturas {
         System.out.print("Digite a palavra ou expressao que deseja remover: ");
         descricao = teclado.nextLine().toUpperCase();//lê as palavras ou expressões e transforma para maiúculo
 
-        for(int i = 0; i < lista.size(); i++){ //laço para fazer a remoção da palavra
+        for(int i = 0; i < lista.size(); i++){ //percorre via indice
             if(lista.get(i).descricao.contains(descricao)){
                 lista.remove(i);
                 i--; // importante para não pular elementos
@@ -70,7 +70,7 @@ public class Estruturas {
 
         System.out.println("Processos removidos com sucesso!");
         System.out.println("\nLista atualizada:");
-        
+        //percorre via objeto
         for(Processo p : lista){
             System.out.println(p);
         }
