@@ -88,3 +88,9 @@ public class Estruturas {
 
     }
 }
+        /*percorre via objeto
+        for(Processo p : lista){
+            System.out.println(p);
+        }
+        for(int i = 0; i < lista.size(); i++){ //percorre via indice
+        }*/
