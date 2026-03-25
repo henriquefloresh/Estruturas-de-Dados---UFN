@@ -93,4 +93,9 @@ public class Estruturas {
             System.out.println(p);
         }
         for(int i = 0; i < lista.size(); i++){ //percorre via indice
+        }
+    //percorrer por um iterador
+        Iterator<Processo> it = lista.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
         }*/
