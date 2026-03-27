@@ -3,21 +3,43 @@ from Clima import Clima
 lista = []
 nome_base = "base.csv"
 
+contagem_meses = {}
+
 try:
     leitor = open(nome_base, "r", encoding="utf-8")
 
     for linha in leitor:
-        dados_linha = linha.split(",")
-        obj_clima = Clima(dados_linha[0],dados_linha[1],dados_linha[2],dados_linha[3])
+        dados_linha = linha.strip().split(",")
+
+        obj_clima = Clima(
+            dados_linha[0],
+            dados_linha[1],
+            dados_linha[2],
+            dados_linha[3]
+        )
+
         if obj_clima not in lista:
             lista.append(obj_clima)
 
-    for item in lista:
-        print(item)
-       
+        # usando os atributos da classe
+        if obj_clima.precipitacao == "muita":
+            mes = obj_clima.mes
+
+            if mes in contagem_meses:
+                contagem_meses[mes] += 1
+            else:
+                contagem_meses[mes] = 1
+
     leitor.close()
+
+    # encontrar o mês com mais chuva
+    mes_mais_chuva = max(contagem_meses, key=contagem_meses.get)
+
+    print("\nMês que mais chove:", mes_mais_chuva)
+    print("Quantidade de vezes com muita chuva:", contagem_meses[mes_mais_chuva])
+
 except Exception as e:
-   print("Ocorreu algum erro....", e)
+    print("Ocorreu algum erro....", e)
 
 #arquivo que tem que ler é esta base csv: 
 #2020,Janeiro,Quente,muita
