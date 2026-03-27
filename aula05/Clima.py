@@ -1,16 +1,20 @@
 from Clima import Clima
 
+# lista para armazenar os objetos Clima (sem repetição de ano/mês)
 lista = []
 nome_base = "base.csv"
 
 contagem_meses = {}
 
 try:
+    # abre o arquivo para leitura
     leitor = open(nome_base, "r", encoding="utf-8")
 
+    # percorre cada linha do arquivo
     for linha in leitor:
-        dados_linha = linha.strip().split(",")
+        dados_linha = linha.strip().split(",") # remove espaços/quebras de linha e separa os dados por vírgula
 
+        # cria um objeto da classe Clima com os dados da linha
         obj_clima = Clima(
             dados_linha[0],
             dados_linha[1],
@@ -18,26 +22,35 @@ try:
             dados_linha[3]
         )
 
+        # verifica se esse objeto já está na lista
+        # (usa o método __eq__ da classe Clima)
         if obj_clima not in lista:
-            lista.append(obj_clima)
+            lista.append(obj_clima)  # adiciona se não for repetido
 
-        # usando os atributos da classe
+
+        # verifica se a precipitação é "muita"
         if obj_clima.precipitacao == "muita":
-            mes = obj_clima.mes
+            mes = obj_clima.mes # pega o mês do objeto
 
+            # se o mês já existe no dicionário, soma +1
             if mes in contagem_meses:
                 contagem_meses[mes] += 1
             else:
+                # se não existe, inicia com 1
                 contagem_meses[mes] = 1
 
+    # fecha o arquivo após a leitura
     leitor.close()
 
-    # encontrar o mês com mais chuva
+    # encontra o mês com maior quantidade de "muita" chuva
+    # key=contagem_meses.get faz a comparação pelos valores do dicionário
     mes_mais_chuva = max(contagem_meses, key=contagem_meses.get)
 
+    # exibe o resultado final
     print("\nMês que mais chove:", mes_mais_chuva)
     print("Quantidade de vezes com muita chuva:", contagem_meses[mes_mais_chuva])
 
+# caso ocorra algum erro (arquivo não encontrado, etc.)
 except Exception as e:
     print("Ocorreu algum erro....", e)
 
