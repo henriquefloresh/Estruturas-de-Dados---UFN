@@ -5,7 +5,7 @@ class Clima:
         self.temperatura = temperatura
         self.precipitacao = precipitacao
 
-    def __str__(self):
+    def __str__(self): #__str__: retornar uma representação do tipo string
         return f"Dados climaticos -> Ano:{self.ano}. Mes:{self.mes}. Temperatura:{self.temperatura}. Precipitacao:{self.precipitacao}"
     
     def __eq__(self, object):
