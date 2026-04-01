@@ -1,0 +1,13 @@
+Coleção são Estruturas de Dados Abstratos
+  - List -> Vector, ArrayList, LinkedList
+    -listas para armazenamento de dados, remoção, busca e relatório (ordenados).
+
+  - Stack (pilha) - LIFO -> Last in, First Out - o último que entra é o primeiro a sair
+    - TOPO - peek
+    - Há somente duas operações clássicas: REMOVER do topo e INSERIR no topo
+
+  - Outros métodos básicos:
+    - peek() - mostra o topo
+    - size() - mostra o tamanho
+    - isEmpty() - verifica se vazia
+    - contains() - procura por im elemento na pilha
