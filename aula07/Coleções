@@ -11,3 +11,8 @@ Coleção são Estruturas de Dados Abstratos
     - size() - mostra o tamanho
     - isEmpty() - verifica se vazia
     - contains() - procura por im elemento na pilha
+
+  - Queue (fila) - FIFO - First In, First Out - o primeiro que chega é o primeiro que sair
+  - DOIS PONTEIROS - um para a caebça/início (remover); outro para a cauda/fim (inserir)
+  - Novamente, há somente duas operações clássicas: REMOVER da cabeça e INSERIR na cauda
+
