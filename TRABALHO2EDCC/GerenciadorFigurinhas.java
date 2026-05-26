@@ -203,7 +203,7 @@ public class GerenciadorFigurinhas {
                 System.out.println(f);
             }
             
-            System.out.println("\n🤝 MATCHES (Ele tem repetida o que você QUER):");
+            System.out.println("\n MATCHES (Ele tem repetida o que você QUER):");
             boolean match = false;
             for (Figura f : arvoreOutro) {
                 if (arvoreDesejadasPessoais.contains(f)) {
@@ -218,7 +218,7 @@ public class GerenciadorFigurinhas {
                 System.out.println(f);
             }
             
-            System.out.println("\n🤝 MATCHES (Você tem repetida o que ele QUER):");
+            System.out.println("\n MATCHES (Você tem repetida o que ele QUER):");
             boolean match = false;
             for (Figura f : arvoreOutro) {
                 if (arvoreRepetidasPessoais.contains(f)) {
