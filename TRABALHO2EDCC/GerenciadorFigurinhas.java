@@ -23,7 +23,6 @@ Toda vez que o programa for iniciado, os arquivos csv pessoais devem ser populad
 import java.io.*;
 import java.util.*;
 
-// Classe Básica Figura
 class Figura implements Comparable<Figura> {
     private String nomeSelecao;
     private int numeroFigura;
@@ -39,7 +38,6 @@ class Figura implements Comparable<Figura> {
         this.rara = rara;
     }
 
-    // Getters e Setters
     public String getNomeSelecao() { return nomeSelecao; }
     public int getNumeroFigura() { return numeroFigura; }
     public String getDescricao() { return descricao; }
@@ -47,26 +45,23 @@ class Figura implements Comparable<Figura> {
     public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
     public boolean isRara() { return rara; }
 
-    // Ordenação automática pelo número da figurinha na Árvore
     @Override
     public int compareTo(Figura outra) {
         return Integer.compare(this.numeroFigura, outra.numeroFigura);
     }
 
-    // Conversão para linha de arquivo CSV
     public String toCSV() {
         return nomeSelecao + ";" + numeroFigura + ";" + descricao + ";" + quantidade + ";" + rara;
     }
 
-    // Correção aqui: mapeando os índices corretamente do array
     public static Figura fromCSV(String linha) {
         String[] partes = linha.split(";");
         return new Figura(
-            partes[0],                        // nomeSelecao
-            Integer.parseInt(partes[1]),      // numeroFigura
-            partes[2],                        // descricao
-            Integer.parseInt(partes[3]),      // quantidade
-            Boolean.parseBoolean(partes[4])   // rara
+            partes[0],                        
+            Integer.parseInt(partes[1]),      
+            partes[2],                        
+            Integer.parseInt(partes[3]),      
+            Boolean.parseBoolean(partes[4])   
         );
     }
 
@@ -87,7 +82,6 @@ public class GerenciadorFigurinhas {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Inicialização automática dos dados
         carregarCSV(CSV_REPETIDAS, arvoreRepetidasPessoais);
         carregarCSV(CSV_DESEJADAS, arvoreDesejadasPessoais);
 
@@ -175,7 +169,6 @@ public class GerenciadorFigurinhas {
         System.out.println("Figura salva com sucesso!");
     }
 
-    // Correção aqui: substituído por um loop tradicional para evitar erros de compilação do System.out::println
     private static void listarArvore(TreeSet<Figura> arvore, String titulo) {
         System.out.println("\n--- LISTA DE FIGURAS " + titulo + " ---");
         if (arvore.isEmpty()) {
@@ -187,7 +180,6 @@ public class GerenciadorFigurinhas {
         }
     }
 
-    // Correção aqui: loops internos ajustados para impressão segura
     private static void processarArquivoOutro(boolean isRepetidasOutro) {
         System.out.print("\nDigite o nome do arquivo CSV do outro colecionador (ex: outro.csv): ");
         String nomeArquivo = scanner.nextLine();
@@ -257,4 +249,3 @@ public class GerenciadorFigurinhas {
         }
     }
 }
-
