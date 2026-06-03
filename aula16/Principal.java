@@ -2,34 +2,42 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        ArrayList<String> estacoes =  new ArrayList<>();
-        //populando estacoes
-        estacoes.add("a");
-        estacoes.add("b");
-        estacoes.add("c");
-        estacoes.add("d");
-        estacoes.add("e");
+        ArrayList<String> vertices =  new ArrayList<>();
+        //populando vertices
+        // vertices.add("a");
+        // vertices.add("b");
+        // vertices.add("c");
+        // vertices.add("d");
+        // vertices.add("e");
 
+        //TRABALHO AQUI
+        //ler arquivo csv, chamado mapa.csv do tipo
+            //a,b
+            //b,c
+            //b,d
+            //d,a
+            //d,b
+            //d,c
+            //e,d
+        //extrair os vertices presentes no csv e adiciona-los na lista de vertices(lembrar de ordenar)
+        
+        Grafo gAssimetrico = new Grafo(vertices);
 
-        Grafo gAssimetrico = new Grafo(estacoes);
-        gAssimetrico.inserirAresta(0,1);//a,b
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("a"), gAssimetrico.pegarIndice("b"));
 
-        gAssimetrico.inserirAresta(1,2);//b,c
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("b"), gAssimetrico.pegarIndice("c"));
 
-        gAssimetrico.inserirAresta(1,3);//b,d
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("b"), gAssimetrico.pegarIndice("d"));
+        
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("c"), gAssimetrico.pegarIndice("e"));
 
-        gAssimetrico.inserirAresta(2,4);//c,e
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("d"), gAssimetrico.pegarIndice("a"));
+        
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("d"), gAssimetrico.pegarIndice("b"));
 
-        gAssimetrico.inserirAresta(0,1);//a,b
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("d"), gAssimetrico.pegarIndice("c"));
 
-        gAssimetrico.inserirAresta(3,0);//d,a
-
-        gAssimetrico.inserirAresta(3,1);//d,b
-
-        gAssimetrico.inserirAresta(3,2);//d,c
-
-        gAssimetrico.inserirAresta(4,3);//e,d
-
+        gAssimetrico.inserirAresta(gAssimetrico.pegarIndice("e"), gAssimetrico.pegarIndice("d"));
 
         gAssimetrico.mostrarMatriz();
         System.out.println();
