@@ -1,3 +1,5 @@
+//Fazer uma classe que lesse o csv, adicionasse os vertices localizados na lista de vertices(sem duplicados)
+
 import java.util.ArrayList;
 public class Grafo {
     int matrizADJ[][];
@@ -51,4 +53,8 @@ public class Grafo {
         }
     }
     
+    //retorna o indice na lista de vertices de um vertice
+    int pegarIndice(String vertice){
+        return this.vertices.indexOf(vertice);
+    }
 }
